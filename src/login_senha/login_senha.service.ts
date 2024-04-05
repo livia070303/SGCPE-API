@@ -1,4 +1,4 @@
-import { BadRequestException, ConflictException, Injectable, InternalServerErrorException } from "@nestjs/common";
+import { BadRequestException, Injectable, InternalServerErrorException } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
 import { LoginSenha } from "./login_senha.entity";
 import { Repository } from "typeorm";
@@ -17,7 +17,7 @@ export class LoginService{
         try {
             const login = await this.loginRepository.findOne(
             { where:
-                {   nomeUsuario: loginDto.nomeUsuario,
+                {
                     RG: loginDto.RG,
                     senha: loginDto.senha }
             });
@@ -42,12 +42,10 @@ export class LoginService{
       async salvaRegister(registerDto: RegisterDto): Promise<LoginSenha> {
 
         const register = this.loginRepository.create();
-        register.nomeCompleto = registerDto.nomeCompleto;
-        register.dataNascimento = new Date (registerDto.dataNascimento);
         register.RG = registerDto.RG;
         register.cargoEscolar = registerDto.cargoEscolar;
         register.nomeEscola = registerDto.nomeEscola;
-        register.nomeUsuario = registerDto.nomeUsuario;
+        register.nomeCompleto = registerDto.nomeCompleto;
         register.senha = registerDto.senha;
 
         try {
