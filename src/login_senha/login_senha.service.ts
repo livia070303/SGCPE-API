@@ -46,6 +46,7 @@ export class LoginService{
         register.cargoEscolar = registerDto.cargoEscolar;
         register.nomeEscola = registerDto.nomeEscola;
         register.nomeCompleto = registerDto.nomeCompleto;
+        register.email = registerDto.email;
         register.senha = registerDto.senha;
 
         try {

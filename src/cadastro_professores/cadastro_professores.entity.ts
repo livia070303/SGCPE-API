@@ -10,21 +10,21 @@ import {
     @PrimaryGeneratedColumn()
     ID_cp: number;
   
-    @Column({ nullable: true, type: 'int' })
+    @Column({ nullable: false, type: 'int' })
     ID_ls: number;
   
-    @Column({ nullable: true, type: 'varchar', length: 200})
+    @Column({ nullable: false, type: 'varchar', length: 200})
     nomeCompleto: string;
   
-    @Column({ nullable: true, type: 'varchar', length: 10 })
+    @Column({ nullable: false, type: 'varchar', length: 10 })
     RG: string;
   
-    @Column({ nullable: true, type: 'varchar', length: 200 })
+    @Column({ nullable: false, type: 'varchar', length: 200 })
     categoria: string;
   
-    @Column({ nullable: true, type: 'varchar', length: 2})
+    @Column({ nullable: false, type: 'varchar', length: 2})
     DI: string;
   
-    @Column({ nullable: true, type: 'varchar', length: 10 })
+    @Column({ nullable: false, type: 'varchar', length: 10 })
     codigoDisciplina: string;
   }

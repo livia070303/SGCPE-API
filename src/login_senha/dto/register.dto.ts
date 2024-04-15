@@ -3,5 +3,6 @@ export class RegisterDto {
     cargoEscolar: string;
     nomeEscola: string;
     nomeCompleto: string;
+    email: string;
     senha: string;
 }

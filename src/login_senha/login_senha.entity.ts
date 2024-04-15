@@ -10,18 +10,21 @@ import {
     @PrimaryGeneratedColumn()
     ID_ls: number;
 
-    @Column({ nullable: true, type: 'varchar', length: 10 })
+    @Column({ nullable: false, type: 'varchar', length: 10 })
     RG: string;
   
-    @Column({ nullable: true, type: 'varchar', length: 200 })
+    @Column({ nullable: false, type: 'varchar', length: 200 })
     cargoEscolar: string;
   
-    @Column({ nullable: true, type: 'varchar', length: 200})
+    @Column({ nullable: false, type: 'varchar', length: 200})
     nomeEscola: string;
 
-    @Column({ nullable: true, type: 'varchar', length: 200})
+    @Column({ nullable: false, type: 'varchar', length: 200})
     nomeCompleto: string;
 
-    @Column({ nullable: true, type: 'varchar', length: 10 })
+    @Column({ nullable: false, type: 'varchar', length: 100})
+    email: string;
+
+    @Column({ nullable: false, type: 'varchar', length: 10 })
     senha: string;
   }
