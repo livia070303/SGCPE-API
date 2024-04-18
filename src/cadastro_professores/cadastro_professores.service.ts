@@ -14,7 +14,6 @@ export class CadastroProfessoresService {
     async createCadastroProfessores(createDto: CadastroProfessoresDto ): Promise<CadastroProfessores> {
 
             const cadastroProf = this.cadastroProfessorRepository.create();
-            cadastroProf.ID_ls = createDto.ID_ls;
             cadastroProf.RG = createDto.RG;
             cadastroProf.categoria = createDto.categoria;
             cadastroProf.codigoDisciplina = createDto.codigoDisciplina;
@@ -31,7 +30,6 @@ export class CadastroProfessoresService {
                     );
             }
     }
-
 
     async getCadastroProfessor(): Promise<CadastroProfessores[]> {
       return this.cadastroProfessorRepository.find();

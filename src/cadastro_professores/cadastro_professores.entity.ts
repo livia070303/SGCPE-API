@@ -10,9 +10,6 @@ import {
     @PrimaryGeneratedColumn()
     ID_cp: number;
   
-    @Column({ nullable: false, type: 'int' })
-    ID_ls: number;
-  
     @Column({ nullable: false, type: 'varchar', length: 200})
     nomeCompleto: string;
   
