@@ -1,23 +1,18 @@
 import { AtribuicaoAulas } from "../atribuicao_aulas.entity";
 
 export class AtribuicaoAulasDto {
-    ID_ls: number;
-    nomeProfessor: string;
-    RGProfessor: string;
-    ID_ls_eventual: number;
-    nomeProfessorEventual: string;
-    RGProfessorEventual: string;
+    idAtribuicaoAulas: number;
+    idProfessor: number;
+    idProfessorEventual: number;
     nomeEscola: string;
-    turma: string;
-    serie: string;
-    turno: string;
     UA: string;
     CIE: string;
     ciclo: string;
-    dataAula: Date;
-    qtdAula: number;
-    horaAulaMinutos: number;
-    horaAulaTotal: Date;
+    Data: Date;
+    HoraInicioAula: number;
+    HoraFimAula: number;
+    turno: string;
+    turma: string;
   }
 
   

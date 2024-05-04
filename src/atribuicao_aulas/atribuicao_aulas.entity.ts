@@ -5,59 +5,41 @@ import {
     Column,
   } from 'typeorm';
   
-  @Entity('atribuicaoaulas')
+  @Entity('atribuicao_aulas')
   export class AtribuicaoAulas extends BaseEntity {
     @PrimaryGeneratedColumn()
-    ID_aa: number;
+    idAtribuicaoAulas: number;
   
     @Column({ nullable: false, type: 'int' })
-    ID_ls: number;
+    idProfessor: number;
   
-    @Column({ nullable: false, type: 'varchar', length: 255 })
-    nomeProfessor: string;
-  
-    @Column({ nullable: false, type: 'varchar', length: 10 })
-    RGProfessor: string;
-  
-    @Column({ nullable: false})
-    ID_ls_eventual: number;
-  
-    @Column({ nullable: false, type: 'varchar', length: 255 })
-    nomeProfessorEventual: string;
-  
-    @Column({ nullable: false, type: 'varchar', length: 10 })
-    RGProfessorEventual: string;
+    @Column({ nullable: false, type: 'int'})
+    idProfessorEventual: number;
   
     @Column({ nullable: false, type: 'varchar', length: 255 })
     nomeEscola: string;
-  
-    @Column({ nullable: false, type: 'varchar', length: 255 })
-    turma: string;
-  
-    @Column({ nullable: false, type: 'varchar', length: 255 })
-    serie: string;
-  
-    @Column({ nullable: false, type: 'varchar', length: 255 })
-    turno: string;
 
-    @Column({ nullable: false, type: 'varchar', length: 255 })
+    @Column({ nullable: false, type: 'varchar', length: 50 })
     UA: string;
 
-    @Column({ nullable: false, type: 'varchar', length: 255 })
+    @Column({ nullable: false, type: 'varchar', length: 50 })
     CIE: string;
 
-    @Column({ nullable: false, type: 'varchar', length: 255 })
+    @Column({ nullable: false, type: 'varchar', length: 50 })
     ciclo: string;
 
     @Column({ nullable: false, type: 'date'})
-    dataAula: Date;
-
-    @Column({ nullable: false, type: 'int' })
-    qtdAula: number;
+    Data: Date;
     
-    @Column({ nullable: false, type: 'int' })
-    horaAulaMinutos: number;
+    @Column({ nullable: false, type: 'time' })
+    HoraInicioAula: number;
 
     @Column({ nullable: false, type: 'time' })
-    horaAulaTotal: Date;
+    HoraFimAula: number;
+
+    @Column({ nullable: false, type: 'varchar', length: 50 })
+    turno: string;
+
+    @Column({ nullable: false, type: 'varchar', length: 50 })
+    turma: string;
   }

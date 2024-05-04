@@ -5,7 +5,7 @@ import { AtribuicaoAulasService } from './atribuicao_aulas.service';
 import { ApiTags } from '@nestjs/swagger';
 
 @ApiTags('atribuicao_aulas')
-@Controller('atribuicaoaulas')
+@Controller('atribuicao_aulas')
 export class AtribuicaoAulasController {
   constructor(private atribuicaoAulasService: AtribuicaoAulasService) {}
 
@@ -26,6 +26,16 @@ export class AtribuicaoAulasController {
     const atribuicaoAulas = await this.atribuicaoAulasService.getAtribuicaoAulas();
     return {
       atribuicaoAulas,
+      message: 'ok',
+    };
+  }
+
+  @Get('view')
+  async getViewAtribuicaoAulas(
+  ): Promise<any> {
+    const atribuicaoAulas = await this.atribuicaoAulasService.getViewAtribuicaoAulas();
+    return {
+      data: atribuicaoAulas,
       message: 'ok',
     };
   }
