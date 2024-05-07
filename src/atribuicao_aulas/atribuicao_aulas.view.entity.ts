@@ -7,8 +7,10 @@ import { ViewEntity, ViewColumn } from "typeorm"
                 idAtribuicaoAulas, 
                 idProfessor, 
                 idProfessorEventual, 
-                p1.nomeCompleto AS nomeProfessor, 
+                p1.nomeCompleto AS nomeProfessor,
+                p1.RG as RGProfessor, 
                 p2.nomeCompleto AS nomeProfessorEventual,
+                p2.RG as RGProfessorEventual,
                 nomeEscola, 
                 UA, 
                 CIE, 
@@ -66,4 +68,10 @@ export class ViewAtribuicaoAulas {
 
     @ViewColumn()
     turma: string
+
+    @ViewColumn()
+    RGProfessor: string
+
+    @ViewColumn()
+    RGProfessorEventual: string
 }
