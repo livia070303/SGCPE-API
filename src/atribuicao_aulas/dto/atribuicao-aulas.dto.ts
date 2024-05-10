@@ -4,15 +4,11 @@ export class AtribuicaoAulasDto {
     idAtribuicaoAulas: number;
     idProfessor: number;
     idProfessorEventual: number;
-    nomeEscola: string;
     UA: string;
     CIE: string;
-    ciclo: string;
     Data: Date;
-    HoraInicioAula: number;
-    HoraFimAula: number;
-    turno: string;
-    turma: string;
+    nt: number;
+    quantidadeAulas: number;
   }
 
   

@@ -1,4 +1,4 @@
-import { BadRequestException, ConflictException, Injectable, InternalServerErrorException, UnprocessableEntityException } from '@nestjs/common';
+import { BadRequestException, Injectable, InternalServerErrorException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';
 import { AtribuicaoAulas } from 'src/atribuicao_aulas/atribuicao_aulas.entity';
@@ -21,20 +21,14 @@ export class AtribuicaoAulasService{
             atribuicaoAulas.idAtribuicaoAulas = atribuicaoAulasDto.idAtribuicaoAulas;
             atribuicaoAulas.idProfessor = atribuicaoAulasDto.idProfessor;
             atribuicaoAulas.idProfessorEventual = atribuicaoAulasDto.idProfessorEventual;
-            atribuicaoAulas.nomeEscola = atribuicaoAulasDto.nomeEscola;
             atribuicaoAulas.UA = atribuicaoAulasDto.UA;
             atribuicaoAulas.CIE = atribuicaoAulasDto.CIE;
-            atribuicaoAulas.ciclo = atribuicaoAulasDto.ciclo;
             atribuicaoAulas.Data = atribuicaoAulasDto.Data;
-            atribuicaoAulas.HoraInicioAula = atribuicaoAulasDto.HoraInicioAula;
-            atribuicaoAulas.HoraFimAula = atribuicaoAulasDto.HoraFimAula;
-            atribuicaoAulas.turno = atribuicaoAulasDto.turno;
-            atribuicaoAulas.turma = atribuicaoAulasDto.turma;
+            atribuicaoAulas.quantidadeAulas = atribuicaoAulasDto.quantidadeAulas;
+            atribuicaoAulas.nt = atribuicaoAulasDto.nt;
 
             try {
                 await atribuicaoAulas.save();
-                // delete atribuicaoAulas.RGProfessor;
-                // delete atribuicaoAulas.RGProfessorEventual;
                 return atribuicaoAulas;
             } catch (error) {
                     throw new InternalServerErrorException(
@@ -75,15 +69,11 @@ export class AtribuicaoAulasService{
             respostaAtribuicaoAula.idAtribuicaoAulas = updateDto.idAtribuicaoAulas;
             respostaAtribuicaoAula.idProfessor = updateDto.idProfessor;
             respostaAtribuicaoAula.idProfessorEventual = updateDto.idProfessorEventual;
-            respostaAtribuicaoAula.nomeEscola = updateDto.nomeEscola;
             respostaAtribuicaoAula.UA = updateDto.UA;
             respostaAtribuicaoAula.CIE = updateDto.CIE;
-            respostaAtribuicaoAula.ciclo = updateDto.ciclo;
             respostaAtribuicaoAula.Data = updateDto.Data;
-            respostaAtribuicaoAula.HoraInicioAula = updateDto.HoraInicioAula;
-            respostaAtribuicaoAula.HoraFimAula = updateDto.HoraFimAula;
-            respostaAtribuicaoAula.turno = updateDto.turno;
-            respostaAtribuicaoAula.turma = updateDto.turma;
+            respostaAtribuicaoAula.quantidadeAulas = updateDto.quantidadeAulas;
+            respostaAtribuicaoAula.nt = updateDto.nt;
 
             respostaAtribuicaoAula.save();
             return respostaAtribuicaoAula;
