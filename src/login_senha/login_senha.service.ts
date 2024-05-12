@@ -24,7 +24,6 @@ export class LoginService{
 
             if(login){
                 delete login.senha;
-                delete login.RG;
                 return login;
             }
             else {
@@ -48,6 +47,7 @@ export class LoginService{
         register.nomeCompleto = registerDto.nomeCompleto;
         register.email = registerDto.email;
         register.senha = registerDto.senha;
+        register.telefone = registerDto.telefone;
 
         try {
             await register.save();

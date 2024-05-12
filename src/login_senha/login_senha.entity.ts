@@ -27,4 +27,7 @@ import {
 
     @Column({ nullable: false, type: 'varchar', length: 10 })
     senha: string;
+
+    @Column({ nullable: false, type: 'int'})
+    telefone: number;
   }
