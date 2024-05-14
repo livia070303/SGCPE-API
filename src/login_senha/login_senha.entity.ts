@@ -28,6 +28,6 @@ import {
     @Column({ nullable: false, type: 'varchar', length: 10 })
     senha: string;
 
-    @Column({ nullable: false, type: 'int'})
+    @Column({ nullable: false, type: 'varchar', length: 14})
     telefone: string;
   }
