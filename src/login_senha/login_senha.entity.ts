@@ -29,5 +29,5 @@ import {
     senha: string;
 
     @Column({ nullable: false, type: 'int'})
-    telefone: number;
+    telefone: string;
   }

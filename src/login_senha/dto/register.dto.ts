@@ -5,5 +5,5 @@ export class RegisterDto {
     nomeCompleto: string;
     email: string;
     senha: string;
-    telefone: number;
+    telefone: string;
 }
